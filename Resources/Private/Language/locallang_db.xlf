@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-17T19:47:22Z" product-name="assalat">
+		<header/>
+		<body>
+			<trans-unit id="tx_assalat_domain_model_city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city.salatdays">
+				<source>Salatdays</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country.states">
+				<source>States</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday">
+				<source>Salatday</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.dawn">
+				<source>Dawn</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.sunrise">
+				<source>Sunrise</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.noon">
+				<source>Noon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.afternoon">
+				<source>Afternoon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.sunset">
+				<source>Sunset</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.dusk">
+				<source>Dusk</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state">
+				<source>State</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state.cities">
+				<source>Cities</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_timeslisting.name">
+				<source>Timeslisting</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_timeslisting.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

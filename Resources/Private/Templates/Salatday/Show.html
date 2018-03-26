@@ -1,0 +1,77 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+	<f:render partial="SalatTable" arguments="{salatdays:salatdays}" />
+
+	<f:layout name="Default" />
+
+<f:section name="content">
+		<f:flashMessages />
+
+		<table  class="tx_assalat table table-hover table-sm " >
+			<tr class="table-danger">
+				<th>
+		<f:if condition="{settings.date.label}">
+			<f:then>{settings.date.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.date" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.date -> f:format.date(format: 'd.m.Y' )} </td>
+			</tr>
+			<tr>
+				<th>
+		<f:if condition="{settings.dawn.label}">
+			<f:then>{settings.dawn.label}</f:then>
+			<f:else><f:translate key="tx_assalat_domain_model_salatday.dawn" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.dawnTime} {settings.times.suffix}</td>
+			</tr>
+			<tr>
+				<th>
+		<f:if condition="{settings.sunrise.label}">
+			<f:then>{settings.sunrise.label}</f:then>
+			<f:else><f:translate key="tx_assalat_domain_model_salatday.sunrise" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.sunriseTime} {settings.times.suffix}</td>
+			</tr>
+			<tr>
+				<th>
+		<f:if condition="{settings.noon.label}">
+			<f:then>{settings.noon.label}</f:then>
+			<f:else><f:translate key="tx_assalat_domain_model_salatday.noon" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.noonTime} {settings.times.suffix}</td>
+			</tr>
+			<tr>
+				<th>
+		<f:if condition="{settings.afternoon.label}">
+			<f:then>{settings.afternoon.label}</f:then>
+			<f:else><f:translate key="tx_assalat_domain_model_salatday.afternoon" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.afternoonTime} {settings.times.suffix}</td>
+			</tr>
+			<tr>
+				<th>
+		<f:if condition="{settings.sunset.label}">
+			<f:then>{settings.sunset.label}</f:then>
+			<f:else><f:translate key="tx_assalat_domain_model_salatday.sunset" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.sunsetTime} {settings.times.suffix}</td>
+			</tr>
+			<tr>
+				<th>
+		<f:if condition="{settings.dusk.label}">
+			<f:then>{settings.dusk.label}</f:then>
+			<f:else><f:translate key="tx_assalat_domain_model_salatday.dusk" /></f:else>
+		</f:if>
+				</th>
+				<td align="right">{salatday.duskTime} {settings.times.suffix}</td>
+			</tr>
+				</table>
+
+</f:section>
+</html>

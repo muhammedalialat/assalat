@@ -1,0 +1,103 @@
+<table class="table striped">
+	<thead>
+		<tr>
+	<f:if condition="{settings.date.hide} != 1">
+		<th>
+		<f:if condition="{settings.date.label}">
+			<f:then>{settings.date.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.date" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+	<f:if condition="{settings.dawn.hide} != 1">
+		<th>
+		<f:if condition="{settings.dawn.label}">
+			<f:then>{settings.dawn.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.dawn" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+	<f:if condition="{settings.sunrise.hide} != 1">
+		<th>
+		<f:if condition="{settings.sunrise.label}">
+			<f:then>{settings.sunrise.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.sunrise" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+	<f:if condition="{settings.noon.hide} != 1">
+		<th>
+		<f:if condition="{settings.noon.label}">
+			<f:then>{settings.noon.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.noon" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+	<f:if condition="{settings.afternoon.hide} != 1">
+		<th>
+		<f:if condition="{settings.afternoon.label}">
+			<f:then>{settings.afternoon.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.afternoon" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+	<f:if condition="{settings.sunset.hide} != 1">
+		<th>
+		<f:if condition="{settings.sunset.label}">
+			<f:then>{settings.sunset.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.sunset" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+	<f:if condition="{settings.dusk.hide} != 1">
+		<th>
+		<f:if condition="{settings.dusk.label}">
+			<f:then>{settings.dusk.label}</f:then>
+			<f:else><f:translate id="tx_assalat_domain_model_salatday.dusk" /></f:else>
+		</f:if>
+		</th>
+	</f:if>
+</tr>
+</thead>
+<tbody>
+<f:for each="{salatdays}" as="salatday">
+	<f:cycle values="{0: 'even', 1: 'odd'}" as="className">
+		<tr class="tr-{className} text-center">
+		<f:if condition="{settings.date.hide} != 1">
+			<td><f:format.date format="d.m.Y">{salatday.date}</f:format.date></td>
+		</f:if>
+		<f:if condition="{settings.dawn.hide} != 1">
+			<td><f:format.date format="G:i">
+				{salatday.dawn} +<f:if condition="{settings.dawn.minutes} == 0">0</f:if>{settings.dawn.minutes} minutes
+			</f:format.date></td>
+		</f:if>
+		<f:if condition="{settings.sunrise.hide} != 1">
+			<td><f:format.date format="G:i">
+				{salatday.sunrise} +<f:if condition="{settings.sunrise.minutes} == 0">0</f:if>{settings.sunrise.minutes} minutes
+			</f:format.date></td>
+		</f:if>
+		<f:if condition="{settings.noon.hide} != 1">
+			<td><f:format.date format="G:i">
+				{salatday.noon} +<f:if condition="{settings.noon.minutes} == 0">0</f:if>{settings.noon.minutes} minutes
+			</f:format.date></td>
+		</f:if>
+		<f:if condition="{settings.afternoon.hide} != 1">
+			<td><f:format.date format="G:i">
+				{salatday.afternoon} +<f:if condition="{settings.afternoon.minutes} == 0">0</f:if>{settings.afternoon.minutes} minutes
+			</f:format.date></td>
+		</f:if>
+		<f:if condition="{settings.sunset.hide} != 1">
+			<td><f:format.date format="G:i">
+				{salatday.sunset} +<f:if condition="{settings.sunset.minutes} == 0">0</f:if>{settings.sunset.minutes} minutes
+			</f:format.date></td>
+		</f:if>
+		<f:if condition="{settings.dusk.hide} != 1">
+			<td><f:format.date format="G:i">
+				{salatday.dusk} +<f:if condition="{settings.dusk.minutes} == 0">0</f:if>{settings.dusk.minutes} minutes
+			</f:format.date></td>
+		</f:if>
+		</tr>
+	</f:cycle>
+</f:for>
+</tbody>
+</table>

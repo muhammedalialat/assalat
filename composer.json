@@ -1,0 +1,28 @@
+{
+    "name": "alat/assalat",
+    "type": "typo3-cms-extension",
+    "description": "Display islamic praying times for cities all over ther world. (Salat, Salah asr, Namaz vakitleri, Gebetszeiten)",
+    "authors": [
+        {
+            "name": "Muhammed Ali Alat",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alat\\Assalat\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alat\\Assalat\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "assalat": "self.version",
+        "typo3-ter/assalat": "self.version"
+    }
+}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-17T19:47:22Z" product-name="assalat">
+		<header/>
+		<body>
+			<trans-unit id="tx_assalat.settings.display">
+				<source>Display</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.settings.day">
+				<source>Day</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.settings.week">
+				<source>Week</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.settings.month">
+				<source>Month</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.settings.hide">
+				<source>Hide columns</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.settings.label">
+				<source>Label settings</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.settings.time">
+				<source>Time settings</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.date.hide">
+				<source>Hide date</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.dawn.hide">
+				<source>Hide dawn</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.sunrise.hide">
+				<source>Hide sunrise</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.noon.hide">
+				<source>Hide noon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.afternoon.hide">
+				<source>Hide afternoon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.sunset.hide">
+				<source>Hide sunset</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.dusk.hide">
+				<source>Hide dusk</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.dawn.minutes">
+				<source>Add minutes to dawn</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.sunrise.minutes">
+				<source>Add minutes to  sunrise</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.noon.minutes">
+				<source>Add minutes to  noon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.afternoon.minutes">
+				<source>Add minutes to  afternoon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.sunset.minutes">
+				<source>Add minutes to  sunset</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat.dusk.minutes">
+				<source>Add minutes to  dusk</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_city.salatdays">
+				<source>Salatdays</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_country.states">
+				<source>States</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday">
+				<source>Salatday</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.dawn">
+				<source>Dawn</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.sunrise">
+				<source>Sunrise</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.noon">
+				<source>Noon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.afternoon">
+				<source>Afternoon</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.sunset">
+				<source>Sunset</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.dusk">
+				<source>Dusk</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_salatday.times_suffix">
+				<source>Times suffix</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state">
+				<source>State</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state.number">
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_assalat_domain_model_state.cities">
+				<source>Cities</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

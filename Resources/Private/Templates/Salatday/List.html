@@ -1,0 +1,31 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+	<f:section name="content">
+
+		<f:flashMessages />
+
+		<table  class="tx_assalat table" >
+			<tr>
+				<th><f:translate key="tx_assalat_domain_model_salatday.date" /></th>
+				<th><f:translate key="tx_assalat_domain_model_salatday.dawn" /></th>
+				<th><f:translate key="tx_assalat_domain_model_salatday.sunrise" /></th>
+				<th><f:translate key="tx_assalat_domain_model_salatday.noon" /></th>
+				<th><f:translate key="tx_assalat_domain_model_salatday.afternoon" /></th>
+				<th><f:translate key="tx_assalat_domain_model_salatday.sunset" /></th>
+				<th><f:translate key="tx_assalat_domain_model_salatday.dusk" /></th>
+			</tr>
+
+			<f:for each="{salatdays}" as="salatday">
+				<tr>
+					<td>{salatday.date -> f:format.date(format: 'd.m.Y' )} </td>
+					<td>{salatday.dawnTime}</td>
+					<td>{salatday.sunriseTime}</td>
+					<td>{salatday.noonTime}</td>
+					<td>{salatday.afternoonTime}</td>
+					<td>{salatday.sunsetTime}</td>
+					<td>{salatday.duskTime}</td>
+				</tr>
+			</f:for>
+		</table>
+	</f:section>
+</html>

@@ -1,0 +1,372 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Assalat Config</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.display</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.month</numIndex>
+										<numIndex index="1">Salatday->listMonth</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.week</numIndex>
+										<numIndex index="1">Salatday->list</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.day</numIndex>
+										<numIndex index="1">Salatday->show</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+
+					<settings.update>
+						<TCEforms>
+							<label>Download new countries and cities on save</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.update>
+
+					<settings.country>
+						<TCEforms>
+							<label>Country</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>Alat\Assalat\Controller\CountryController->flexformAction</itemsProcFunc>
+							</config>
+						</TCEforms>
+					</settings.country>
+					<settings.state>
+						<TCEforms>
+							<label>State</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>Alat\Assalat\Controller\StateController->flexformAction</itemsProcFunc>
+							</config>
+						</TCEforms>
+					</settings.state>
+					<settings.city>
+						<TCEforms>
+							<label>City</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>Alat\Assalat\Controller\CityController->flexformAction</itemsProcFunc>
+							</config>
+						</TCEforms>
+					</settings.city>
+				</el>
+			</ROOT>
+		</sDEF>
+
+		<sHIDE>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.hide</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.date.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.date.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.date.hide>
+
+					<settings.dawn.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.dawn.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.dawn.hide>
+
+					<settings.sunrise.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.sunrise.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.sunrise.hide>
+
+					<settings.noon.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.noon.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.noon.hide>
+
+					<settings.afternoon.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.afternoon.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.afternoon.hide>
+
+					<settings.sunset.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.sunset.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.sunset.hide>
+
+					<settings.dusk.hide>
+						<TCEforms>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.dusk.hide</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.dusk.hide>
+
+				</el>
+			</ROOT>
+		</sHIDE>
+
+		<sLABEL>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.label</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.date.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.date</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.date.label>
+
+					<settings.dawn.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.dawn</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.dawn.label>
+
+					<settings.sunrise.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.sunrise</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.sunrise.label>
+
+					<settings.noon.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.noon</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.noon.label>
+
+					<settings.afternoon.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.afternoon</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.afternoon.label>
+
+					<settings.sunset.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.sunset</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.sunset.label>
+
+					<settings.dusk.label>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.dusk</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.dusk.label>
+
+					<settings.times.suffix>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat_domain_model_salatday.times_suffix</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+								<eval>trim</eval>
+							</config>
+						</TCEforms>
+					</settings.times.suffix>
+
+				</el>
+			</ROOT>
+		</sLABEL>
+
+		<sTIME>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.settings.time</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+
+					<settings.dawn.minutes>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.dawn.minutes</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>int</eval>
+								<max>3</max>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.dawn.minutes>
+
+					<settings.sunrise.minutes>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.sunrise.minutes</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>int</eval>
+								<max>3</max>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.sunrise.minutes>
+
+					<settings.noon.minutes>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.noon.minutes</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>int</eval>
+								<max>3</max>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.noon.minutes>
+
+					<settings.afternoon.minutes>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.afternoon.minutes</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>int</eval>
+								<max>3</max>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.afternoon.minutes>
+
+					<settings.sunset.minutes>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.sunset.minutes</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>int</eval>
+								<max>3</max>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.sunset.minutes>
+
+					<settings.dusk.minutes>
+						<TCEforms>
+							<label>LLL:EXT:assalat/Resources/Private/Language/locallang.xlf:tx_assalat.dusk.minutes</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+								<eval>int</eval>
+								<max>3</max>
+								<default>0</default>
+							</config>
+						</TCEforms>
+					</settings.dusk.minutes>
+
+				</el>
+			</ROOT>
+		</sTIME>
+	</sheets>
+</T3DataStructure>

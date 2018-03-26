@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-17T19:47:22Z" product-name="assalat">
+		<header/>
+		<body>
+			<trans-unit id="date.description">
+				<source>date</source>
+			</trans-unit>
+			<trans-unit id="dawn.description">
+				<source>dawn</source>
+			</trans-unit>
+			<trans-unit id="sunrise.description">
+				<source>sunrise</source>
+			</trans-unit>
+			<trans-unit id="noon.description">
+				<source>noon</source>
+			</trans-unit>
+			<trans-unit id="afternoon.description">
+				<source>afternoon</source>
+			</trans-unit>
+			<trans-unit id="sunset.description">
+				<source>sunset</source>
+			</trans-unit>
+			<trans-unit id="dusk.description">
+				<source>dusk</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
