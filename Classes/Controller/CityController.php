@@ -97,8 +97,8 @@ class CityController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	public function flexformAction($config) {
 		$this->initializeRepositories();
 
-		$country = $this->countryRepository->findOneByNumber($config['row']['settings.country'][0]);
-		$state = $this->stateRepository->findOneByNumber($config['row']['settings.state'][0]);
+		$country = $this->countryRepository->findOneByNumber($config['row']['settings.country']);
+		$state = $this->stateRepository->findOneByNumber($config['row']['settings.state']);
 
 		if (empty($country) || empty($state)) {
 			return;

@@ -83,7 +83,7 @@ class StateController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	public function flexformAction($config) {
 		$this->initializeRepositories();
 
-		$country = $this->countryRepository->findOneByNumber($config['row']['settings.country'][0]);
+		$country = $this->countryRepository->findOneByNumber($config['row']['settings.country']);
 
 		if (empty($country)) {
 			return;
