@@ -49,8 +49,29 @@ class SalatdayRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		$result = $query->execute();
 
 		return $result;
-
 	}
+
+	public function findDay($city, $date) {
+
+		$query = $this->createQuery();
+
+#		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+#		$query->getQuerySettings()->setIgnoreEnableFields(TRUE);
+#		$query->getQuerySettings()->setRespectSysLanguage(FALSE);
+
+		$query->matching(
+		 		$query->logicalAnd(
+		 			$query->equals('city', $city->getUid()),
+		 		   $query->equals('date', $date)
+		 		)
+		);
+#		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($city->getUid());
+
+		$result = $query->execute();
+
+		return $result->getFirst();
+	}
+
 
 	/**
 	 *

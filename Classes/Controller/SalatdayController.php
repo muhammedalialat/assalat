@@ -135,7 +135,24 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function listMonthAction()
     {
-      echo 'listMonthAction';
+      $this->initializeRepositories();
+
+      $city = $this->cityRepository->findOneByNumber($this->settings['city']);
+
+      if (empty($city)) {
+        return 'City not found.';
+      }
+
+      $salatdays = $this->salatdayRepository->findDays($city, 30);
+
+      if ($salatdays->count() < 30) {
+        $this->downloadSalatTimes($city);
+  	    $this->persistenceManager->persistAll();
+      }
+
+#      \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($salatdays);
+
+      $this->view->assign('salatdays', $salatdays);
     }
 
 
@@ -157,7 +174,7 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
       $salatdays = $this->salatdayRepository->findDays($city, 30);
 
 
-      if ($salatdays->count() == 0) {
+      if ($salatdays->count() < 7) {
         $this->downloadSalatTimes($city);
   	    $this->persistenceManager->persistAll();
       }
@@ -180,11 +197,20 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
       foreach($htmlTable[0]->getElementsByTagName('tr') as $tableLine) {
         if ($tableLine->parentNode->tagName == 'tbody') {
+          $columns = $tableLine->getElementsByTagName('td');
+
+          $date = \DateTime::createFromFormat('d.m.Y', $columns[0]->nodeValue);
+
+		$salatdayExists = $this->salatdayRepository->findDay($city, $date->format('Y-m-d'));
+
+#      \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($salatdayExists);
+
+		if (!empty($salatdayExists)) {
+			continue;
+		}
 
           $salatday = $this->objectManager->get('Alat\\Assalat\\Domain\\Model\\Salatday');
 
-          $columns = $tableLine->getElementsByTagName('td');
-          $date = \DateTime::createFromFormat('d.m.Y', $columns[0]->nodeValue);
           $salatday->setDate($date);
           $salatday->setDawn($this->castStringTimeToInt($columns[1]->nodeValue));
           $salatday->setSunrise($this->castStringTimeToInt($columns[2]->nodeValue));

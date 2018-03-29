@@ -1,4 +1,4 @@
-<table class="table striped">
+<table class="table table-striped">
 	<thead>
 		<tr>
 	<f:if condition="{settings.date.hide} != 1">
@@ -68,32 +68,32 @@
 		</f:if>
 		<f:if condition="{settings.dawn.hide} != 1">
 			<td><f:format.date format="G:i">
-				{salatday.dawn} +<f:if condition="{settings.dawn.minutes} == 0">0</f:if>{settings.dawn.minutes} minutes
+				{salatday.dawnTime} +<f:if condition="{settings.dawn.minutes} == 0">0</f:if>{settings.dawn.minutes} minutes
 			</f:format.date></td>
 		</f:if>
 		<f:if condition="{settings.sunrise.hide} != 1">
 			<td><f:format.date format="G:i">
-				{salatday.sunrise} +<f:if condition="{settings.sunrise.minutes} == 0">0</f:if>{settings.sunrise.minutes} minutes
+				{salatday.sunriseTime} +<f:if condition="{settings.sunrise.minutes} == 0">0</f:if>{settings.sunrise.minutes} minutes
 			</f:format.date></td>
 		</f:if>
 		<f:if condition="{settings.noon.hide} != 1">
 			<td><f:format.date format="G:i">
-				{salatday.noon} +<f:if condition="{settings.noon.minutes} == 0">0</f:if>{settings.noon.minutes} minutes
+				{salatday.noonTime} +<f:if condition="{settings.noon.minutes} == 0">0</f:if>{settings.noon.minutes} minutes
 			</f:format.date></td>
 		</f:if>
 		<f:if condition="{settings.afternoon.hide} != 1">
 			<td><f:format.date format="G:i">
-				{salatday.afternoon} +<f:if condition="{settings.afternoon.minutes} == 0">0</f:if>{settings.afternoon.minutes} minutes
+				{salatday.afternoonTime} +<f:if condition="{settings.afternoon.minutes} == 0">0</f:if>{settings.afternoon.minutes} minutes
 			</f:format.date></td>
 		</f:if>
 		<f:if condition="{settings.sunset.hide} != 1">
 			<td><f:format.date format="G:i">
-				{salatday.sunset} +<f:if condition="{settings.sunset.minutes} == 0">0</f:if>{settings.sunset.minutes} minutes
+				{salatday.sunsetTime} +<f:if condition="{settings.sunset.minutes} == 0">0</f:if>{settings.sunset.minutes} minutes
 			</f:format.date></td>
 		</f:if>
 		<f:if condition="{settings.dusk.hide} != 1">
 			<td><f:format.date format="G:i">
-				{salatday.dusk} +<f:if condition="{settings.dusk.minutes} == 0">0</f:if>{settings.dusk.minutes} minutes
+				{salatday.duskTime} +<f:if condition="{settings.dusk.minutes} == 0">0</f:if>{settings.dusk.minutes} minutes
 			</f:format.date></td>
 		</f:if>
 		</tr>
