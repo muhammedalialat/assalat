@@ -7,8 +7,9 @@
 <f:section name="content">
 		<f:flashMessages />
 
-		<table  class="tx_assalat table table-hover table-sm " >
-			<tr class="table-danger">
+<div class="table-responsive">
+		<table  class="tx_assalat table table-striped table-hover table-sm text-left" >
+			<tr>
 				<th>
 		<f:if condition="{settings.date.label}">
 			<f:then>{settings.date.label}</f:then>
@@ -72,6 +73,6 @@
 				<td align="right">{salatday.duskTime} {settings.times.suffix}</td>
 			</tr>
 				</table>
-
+</div>
 </f:section>
 </html>

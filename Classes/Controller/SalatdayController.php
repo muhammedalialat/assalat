@@ -1,6 +1,8 @@
 <?php
 namespace Alat\Assalat\Controller;
 
+use Alat\Assalat\Domain\Model\City;
+
 /***
  *
  * This file is part of the "Assalat" Extension for TYPO3 CMS.
@@ -189,6 +191,7 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         . $city->getNumber()
       );
 
+		libxml_use_internal_errors(true);
   		$domDocument = new \DOMDocument();
   		$domDocument->loadHTML($salatTimesHtmlFile);
 
@@ -224,6 +227,9 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $this->cityRepository->update($city);
       }
 
+      // Remove old entries
+      $this->removeOldEntries($city);
+      
   	}
 
     private function castStringTimeToInt($time) {
@@ -232,4 +238,18 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
       return (int) $timeArray[0] * 100 + (int) $timeArray[1];
     }
 
+    /**
+     * 
+     * @param City $city
+     */
+    private function removeOldEntries($city) {
+        $date = new  \DateTime();
+        
+        $salatdays = $this->salatdayRepository->findBeforeDay($city, $date->format('Y-m-d'));
+        
+        foreach ($salatdays as $salatday) {
+            $city->removeSalatday($salatday);
+            $this->cityRepository->update($city);
+        }
+    }
 }

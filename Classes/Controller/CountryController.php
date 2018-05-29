@@ -96,8 +96,8 @@ class CountryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	public function downloadCountries() {
 
 		$countriesHtmlFile = file_get_contents('https://namazvakitleri.diyanet.gov.tr/tr-TR');
-		$domDocument = new \DOMDocument();
 		libxml_use_internal_errors(true);
+		$domDocument = new \DOMDocument();
 		$domDocument->loadHTML($countriesHtmlFile);
 
 		$selects = $domDocument->getElementsByTagName('select');

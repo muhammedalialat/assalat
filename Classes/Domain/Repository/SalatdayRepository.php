@@ -1,6 +1,9 @@
 <?php
 namespace Alat\Assalat\Domain\Repository;
 
+use Alat\Assalat\Domain\Model\City;
+use Alat\Assalat\Domain\Model\Salatday;
+
 /***
  *
  * This file is part of the "Assalat" Extension for TYPO3 CMS.
@@ -44,6 +47,9 @@ class SalatdayRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		 		   $query->greaterThanOrEqual('date', date('Y-m-d'))
 		 		)
 		);
+		$query->setOrderings(
+		    array('date' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING)
+		);
 #		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($city->getUid());
 
 		$result = $query->execute();
@@ -51,6 +57,12 @@ class SalatdayRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		return $result;
 	}
 
+	/**
+	 *
+	 * @param City $city
+	 * @param \DateTime $date
+	 * @return Salatday[]
+	 */
 	public function findDay($city, $date) {
 
 		$query = $this->createQuery();
@@ -72,7 +84,30 @@ class SalatdayRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 		return $result->getFirst();
 	}
 
+	/**
+	 *
+	 * @param City $city
+	 * @param \DateTime $date
+	 * @return Salatday[]
+	 */
+	public function findBeforeDay($city, $date) {
+	    
+	    $query = $this->createQuery();
+	    	    
+	    $query->matching(
+	        $query->logicalAnd(
+	            $query->equals('city', $city->getUid()),
+	            $query->lessThan('date', $date)
+	            )
+	        );
+	    #		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($city->getUid());
+	    
+	    $result = $query->execute();
+	    
+	    return $result->toArray();
+	}
 
+	
 	/**
 	 *
 	 * @param integer $cityNumber
