@@ -186,44 +186,59 @@ class SalatdayController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 
     public function downloadSalatTimes($city) {
 
-  		$salatTimesHtmlFile = file_get_contents(
-        'https://namazvakitleri.diyanet.gov.tr/tr-TR/'
-        . $city->getNumber()
-      );
+        $salatTimesHtmlFile = file_get_contents(
+            'https://namazvakitleri.diyanet.gov.tr/tr-TR/'
+            . $city->getNumber()
+	    );
 
-		libxml_use_internal_errors(true);
+  		libxml_use_internal_errors(true);
   		$domDocument = new \DOMDocument();
   		$domDocument->loadHTML($salatTimesHtmlFile);
 
   		$htmlTableBlock = $domDocument->getElementById('tab-1');
-      $htmlTable = $htmlTableBlock->getElementsByTagName('table');
+  		$htmlTable = $htmlTableBlock->getElementsByTagName('table');
 
-      foreach($htmlTable[0]->getElementsByTagName('tr') as $tableLine) {
-        if ($tableLine->parentNode->tagName == 'tbody') {
-          $columns = $tableLine->getElementsByTagName('td');
+  		foreach($htmlTable[0]->getElementsByTagName('tr') as $tableLine) {
 
-          $date = \DateTime::createFromFormat('d.m.Y', $columns[0]->nodeValue);
+  		    if ($tableLine->parentNode->tagName == 'tbody') {
+    	        $columns = $tableLine->getElementsByTagName('td');
+    	        $dateText = $columns[0]->nodeValue;
+    	        
+    	        $dateText = str_replace(
+    	            [' Ocak ', ' Şubat ', ' Mart ', ' Nisan ', ' Mayıs ', ' Haziran ', ' Temmuz ', ' Ağustos ', ' Eylül ', ' Ekim ', ' Kasım ', ' Aralık '],
+    	            ['.01.', '.02.', '.03.', '.04.', '.05.', '.06.', '.07.', '.08.', '.09.', '.10.', '.11.', '.12.'],
+    	            $dateText
+	            );
+    	        
+    	        $dateText = substr($dateText, 0, 10);
 
-		$salatdayExists = $this->salatdayRepository->findDay($city, $date->format('Y-m-d'));
+    	        $date = \DateTime::createFromFormat('d.m.Y', $dateText);
 
-#      \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($salatdayExists);
-
-		if (!empty($salatdayExists)) {
-			continue;
-		}
-
-          $salatday = $this->objectManager->get('Alat\\Assalat\\Domain\\Model\\Salatday');
-
-          $salatday->setDate($date);
-          $salatday->setDawn($this->castStringTimeToInt($columns[1]->nodeValue));
-          $salatday->setSunrise($this->castStringTimeToInt($columns[2]->nodeValue));
-          $salatday->setNoon($this->castStringTimeToInt($columns[3]->nodeValue));
-          $salatday->setAfternoon($this->castStringTimeToInt($columns[4]->nodeValue));
-          $salatday->setSunset($this->castStringTimeToInt($columns[5]->nodeValue));
-          $salatday->setDusk($this->castStringTimeToInt($columns[6]->nodeValue));
-
-          $city->addSalatday($salatday);
-        }
+    	        if (empty($date)) {
+                  continue;
+              }
+              
+              
+              $salatdayExists = $this->salatdayRepository->findDay($city, $date->format('Y-m-d'));
+    
+    #      \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($salatdayExists);
+    
+    		if (!empty($salatdayExists)) {
+    			continue;
+    		}
+    
+              $salatday = $this->objectManager->get('Alat\\Assalat\\Domain\\Model\\Salatday');
+    
+              $salatday->setDate($date);
+              $salatday->setDawn($this->castStringTimeToInt($columns[1]->nodeValue));
+              $salatday->setSunrise($this->castStringTimeToInt($columns[2]->nodeValue));
+              $salatday->setNoon($this->castStringTimeToInt($columns[3]->nodeValue));
+              $salatday->setAfternoon($this->castStringTimeToInt($columns[4]->nodeValue));
+              $salatday->setSunset($this->castStringTimeToInt($columns[5]->nodeValue));
+              $salatday->setDusk($this->castStringTimeToInt($columns[6]->nodeValue));
+    
+              $city->addSalatday($salatday);
+            }
         $this->cityRepository->update($city);
       }
 
